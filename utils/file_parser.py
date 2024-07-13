@@ -10,3 +10,7 @@ import os
 def is_file_with_type(filename, file_type='csv'):
     _, file_extension = os.path.splitext(filename)
     return file_extension.lower() == file_type
+
+
+def extract_filename(file_path):
+    return os.path.splitext(os.path.basename(file_path))[0]
