@@ -18,7 +18,7 @@ except ImportError:
 
 from tasks.fund_analyze_task import FundAnalyzeTask
 from utils.format_parser import param_str_to_dict, param_str_to_list
-from utils.file_parser import is_file_with_type
+from utils.file_parser import is_file_with_type, extract_filename
 from utils.data_loader import DataLoader
 
 
@@ -51,7 +51,7 @@ def build_data_loader(task_name, data_path, filenames, logger):
             continue
 
         df = pd.read_csv(full_filename)
-        dloader.add_df(filename, df)
+        dloader.add_df(extract_filename(filename), df)
     return dloader
 
 
