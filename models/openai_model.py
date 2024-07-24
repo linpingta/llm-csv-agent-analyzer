@@ -6,17 +6,7 @@ __author__ = 'linpingta'
 
 import os
 import openai
-
-# 默认的GPT配置
-DEFAULT_GPT_CONFIG = {
-    "engine": "devgpt4-32k",
-    "temperature": 0.0,
-    "max_tokens": 5000,
-    "top_p": 1.0,
-    "frequency_penalty": 0.0,
-    "presence_penalty": 0.0,
-    "stop": None
-}
+from .model_configs import DEFAULT_GPT_CONFIG
 
 
 class OpenAIModel(object):
