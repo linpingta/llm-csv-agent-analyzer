@@ -1,11 +1,11 @@
 from .base_task import BaseTask
 
 
-class FundAnalyzeTask(BaseTask):
+class EstateAnalyzeTask(BaseTask):
     def __init__(self, config):
-        super(FundAnalyzeTask, self).__init__(config)
+        super(EstateAnalyzeTask, self).__init__(config)
 
-        self.name = "fund_analyze"
+        self.name = "estate_analyze"
 
     def _preprocess_data(self, logger):
         pass

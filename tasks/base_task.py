@@ -15,19 +15,23 @@ class BaseTask(object):
 
     def __init__(self, config):
         self.data_loader_ = None
+        self.prompt_ = None
+        self.model_ = None
 
     def set_data_loader(self, data_loader, logger):
         self.data_loader_ = data_loader
         self._preprocess_data(logger)
+
+    def set_prompt(self, prompt, logger):
+        self.prompt_ = prompt
+
+    def set_model(self, model, logger):
+        self.model_ = model
 
     @abstractmethod
     def _preprocess_data(self, logger):
         pass
 
     @abstractmethod
-    def inference_all(self, logger):
-        pass
-
-    @abstractmethod
-    def inference_one(self, prompt, logger):
+    def inference(self, question, logger):
         pass
